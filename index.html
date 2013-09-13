@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title></title>
+
+<style type='text/css'>
+#ttable {
+	border-collapse:collapse;
+	width: 300px;
+	font:12px arial;
+}
+#ttable th ,#ttable td {
+	border:1px solid #cdcdcd;
+}
+#ttable th {
+	text-align:right;
+	padding-right:10px;
+	height:27px;
+}
+#ttable td {
+	text-align:left;
+	padding-left:5px;
+}
+#ttable td input[type=text] {
+	border:1px solid gray;
+}
+</style>
+<script type='text/javascript'>
+function formcheck(){
+	var form = document.getElementById('tform');
+
+	if(!form.address1.value){
+		alert('Address is required!');
+		form.address1.focus();
+		return false;
+	}
+	if(!form.city.value){
+		alert('City is required!');
+		form.city.focus();
+		return false;
+	}
+	if(!form.state.value){
+		alert('State is required!');
+		form.state.focus();
+		return false;
+	}
+	if(!form.zipcode.value){
+		alert('zipcode is required!');
+		form.zipcode.focus();
+		return false;
+	}
+	form.submit();
+}
+</script>
+</head>
+
+ <body>
+ <h1>&nbsp;Varify US address </h1>
+ <form action='address.php' method='get' id='tform'>
+  <table border='1' cellspacing='0' cellpadding='0' id='ttable'>
+	<tr>
+		<th> Address 1 : </th>
+		<td> <input type='text' name='address1' /> </td>
+	</tr><tr>
+		<th> Address 2 : </th>
+		<td> <input type='text' name='address2' /> </td>
+	</tr><tr>
+		<th> City : </th>
+		<td> <input type='text' name='city' /> </td>
+	</tr><tr>
+		<th> State Code: </th>
+		<td> <input type='text' name='state' /> </td>
+	</tr><tr>
+		<th> Zip Code : </th>
+		<td> <input type='text' name='zipcode' /> </td>
+	</tr><tr>
+		<th> Country : </th>
+		<td> <input type='text' name='country' value='US' readonly='readonly'/> </td>
+	</tr><tr>
+		<td colspan='2' style='text-align:center;height:30px;'> <input type='button' value='Submit' onclick="formcheck()"/>	</td>
+  </table>
+ </form>
+
+ </body>
+</html>
